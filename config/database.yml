@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 3
+  connect_timeout: 2
+  url: <%= ENV.fetch("DATABASE_URL") %>
+production:
+  <<: *default
+development:
+  <<: *default
+test:
+  <<: *default
